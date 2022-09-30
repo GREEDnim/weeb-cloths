@@ -1,7 +1,10 @@
-import './category-item.styles.scss'
-const Category=(props)=>{
+import './category-item.styles.scss';
 
+
+const Category=(props)=>{
+  
     return(
+      
         <div className="category-container"  >
         <div className="background-image" style={{
           backgroundImage:`url(${props.category.imageUrl})`

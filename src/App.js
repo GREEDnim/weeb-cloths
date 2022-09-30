@@ -1,44 +1,25 @@
-import './App.scss';
-import CategoriesContainer from './components/categories-container/categories-container.component';
-
-
-let category=[
-  {
-    "id": 1,
-    "title": "hats",
-    "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-  },
-  {
-    "id": 2,
-    "title": "jackets",
-    "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-  },
-  {
-    "id": 3,
-    "title": "sneakers",
-    "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-  },
-  {
-    "id": 4,
-    "title": "womens",
-    "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-  },
-  {
-    "id": 5,
-    "title": "mens",
-    "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-  }
-]
-
-
+import Home from "./routes/home/home.component";
+import { Route ,Routes } from "react-router-dom";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/sign-in/signin.component";
+const Shop=()=>{
+  return (<h1>Shop</h1>)
+}
 
 const App =()=>{
 
-  return (
-    
-
-     <CategoriesContainer category={category}></CategoriesContainer>
+  
+  return(
+    <Routes>
+      <Route path="/" element={<Navigation></Navigation>}>
+        <Route index element={<Home></Home>} />
+          <Route path="shop" element={<Shop></Shop>} />
+          <Route path="signin" element={<SignIn></SignIn>}></Route>
+      </Route>
+    </Routes>
+   
   )
+  
 }
 
 export default App;
